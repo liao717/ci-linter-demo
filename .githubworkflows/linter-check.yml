@@ -1,0 +1,26 @@
+name: Code Style Linter  # 工作流名称
+
+on: [push, pull_request]  # 触发条件：推送代码或创建拉取请求时运行
+
+jobs:
+  build:  # 定义一个名为 "build" 的任务
+    runs-on: ubuntu-latest  # 运行环境：最新版 Ubuntu
+    steps:
+      - name: Check out code  # 步骤 1：拉取代码仓库
+        uses: actions/checkout@v3  # 使用官方的 checkout 动作，拉取当前代码
+        
+      - name: Set up Python  # 步骤 2：配置 Python 环境
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"  # 指定 Python 版本（如 3.10、3.11 等，根据项目需求修改）
+          
+      - name: Install dependencies  # 步骤 3：安装项目依赖
+        run: pip install -r requirements.txt  # 从 requirements.txt 安装依赖（需确保文件存在）
+        
+      - name: Run flake8  # 步骤 4：运行 flake8 检查代码风格
+        run: flake8 . --count --show-source --statistics
+        # 参数说明：
+        #   .: 检查当前目录下的所有文件
+        #   --count: 统计错误数量
+        #   --show-source: 显示错误对应的代码行
+        #   --statistics: 显示错误类型的统计信息
