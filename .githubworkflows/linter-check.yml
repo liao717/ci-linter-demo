@@ -12,7 +12,7 @@ jobs:
       - name: Set up Python  # 步骤 2：配置 Python 环境
         uses: actions/setup-python@v4
         with:
-          python-version: "3.x"  # 指定 Python 版本（如 3.10、3.11 等，根据项目需求修改）
+          python-version: "3.10"  # 指定 Python 版本（如 3.10、3.11 等，根据项目需求修改）
           
       - name: Install dependencies  # 步骤 3：安装项目依赖
         run: pip install -r requirements.txt  # 从 requirements.txt 安装依赖（需确保文件存在）
