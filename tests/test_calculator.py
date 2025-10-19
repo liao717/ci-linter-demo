@@ -1,6 +1,7 @@
 # tests/test_calculator.py
 import pytest
 from calculator import add
+from calculator import subtract
 
 
 # 正常情况测试用例
