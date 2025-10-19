@@ -1,11 +1,5 @@
 # 这是一个符合PEP8规范的Python文件示例
 # 修复了多余空格、过长行、不规范命名等问题
-
-import os
-import sys
-from math import sqrt  # 只导入需要的函数
-
-
 def calculate_average(numbers):
     """计算列表中偶数的平均值"""
     total = 0  # 变量名修改，避免使用关键字
