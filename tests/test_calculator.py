@@ -1,6 +1,4 @@
 # tests/test_calculator.py
-import sys
-import os
 import pytest
 from calculator import add
 
@@ -12,14 +10,12 @@ def test_add_normal():
     assert add(0, 0) == 0
     assert add(-1, 1) == 0
 
-
 # 边界情况测试用例
 def test_add_boundary():
     # 大数相加
     assert add(1000000, 2000000) == 3000000
     # 小数相加
     assert add(0.1, 0.2) == pytest.approx(0.3)  # 浮点数比较用approx
-    
 
 # 异常情况测试用例
 def test_add_exception():
