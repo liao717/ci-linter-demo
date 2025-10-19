@@ -2,9 +2,10 @@
 import pytest
 import os
 import sys
-from calculator import add
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from calculator import add
 
 
 # 正常情况测试用例
