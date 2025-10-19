@@ -1,6 +1,7 @@
 # tests/test_calculator.py
 import pytest
 from calculator import add
+from calculator import subtract
 
 
 # 正常情况测试用例
@@ -22,3 +23,9 @@ def test_add_boundary():
 def test_add_exception():
     with pytest.raises(TypeError):
         add(1, "2")  # 整数和字符串相加，预期抛出TypeError
+
+
+def test_subtract():
+    assert subtract(5, 3) == 2
+    assert subtract(0, 0) == 0
+    assert subtract(-2, 1) == -3
