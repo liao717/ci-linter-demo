@@ -26,5 +26,7 @@ jobs:
         run: flake8 .
 
       # 新增单元测试步骤（核心添加部分）
-      - name: Run unit tests
-        run: pytest
+      - name: Run pytest -v
+        run: |
+          python -c "import sys; print(sys.path)"
+          PYTHONPATH=$GITHUB_WORKSPACE pytest -v
